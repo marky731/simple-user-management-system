@@ -14,7 +14,7 @@ class UserReository:
         self.currentUser = {}
 
         #load users form json file
-        # self.loadUser()
+        self.loadUser()
 
     def loadUser(self):
         if os.path.exists("users.json"):
@@ -24,7 +24,7 @@ class UserReository:
                     user = json.loads(user) # takes string, returns dict
                     newUser = User(username= user["username"], password=user["password"], email=user["email"])
                     self.users.append(newUser)
-            print(self.users)
+            # print(self.users)
 
     def register(self,user: User):  # type annotiation
         self.users.append(user)
